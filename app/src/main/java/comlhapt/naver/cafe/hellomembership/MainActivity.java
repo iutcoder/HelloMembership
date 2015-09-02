@@ -65,4 +65,15 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onBackPressed() {
+        // 여기에 코드 입력
+
+        ImageView cardView = (ImageView) findViewById(R.id.cardView);
+        if (cardView.getVisibility() != View.GONE)
+            cardView.setVisibility(View.GONE);
+        else
+            this.finish();
+    }
 }
