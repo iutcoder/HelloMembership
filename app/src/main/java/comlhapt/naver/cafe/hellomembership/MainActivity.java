@@ -1,11 +1,14 @@
 package comlhapt.naver.cafe.hellomembership;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -15,29 +18,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final ImageView cardView = (ImageView) findViewById(R.id.cardView);
+        cardView.setImageResource(R.drawable.card_image);
 
-        final Button linkButton = (Button) findViewById(R.id.linkButton);
-        linkButton.setOnClickListener(new View.OnClickListener() {
+        ImageButton cardButton = (ImageButton) findViewById(R.id.cardbutton);
+        cardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                cardView.setVisibility(View.VISIBLE);
+                cardView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        cardView.setVisibility(View.GONE);
+                    }
+                });
             }
         });
-        linkButton.setVisibility(View.GONE);
-        RelativeLayout layout = (RelativeLayout) findViewById(R.id.baseLayout);
-        layout.setOnClickListener(new View.OnClickListener() {
+        ImageButton cafeButton = (ImageButton) findViewById(R.id.cafebutton);
+        cafeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                linkButton.setVisibility(View.VISIBLE);
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://cafe.naver.com/lhapt/22733")));
             }
         });
-//        ImageView imgView = (ImageView) findViewById(R.id.imageView);
-//        imgView.setImageResource(R.drawable.card_image);
-//        imgView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
+
     }
 
     @Override
