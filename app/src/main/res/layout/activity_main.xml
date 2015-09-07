@@ -1,43 +1,63 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
-    android:layout_height="fill_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    tools:context=".MainActivity"
     android:id="@+id/baseLayout"
-    android:background="#f06994">
+    android:background="@drawable/main_background">
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/abc_button_padding_horizontal_material"
+        android:layout_marginTop="@dimen/abc_button_padding_vertical_material"
+        android:layout_marginBottom="@dimen/abc_button_padding_vertical_material"
+        android:layout_marginRight="@dimen/abc_button_padding_horizontal_material"
+        android:paddingLeft="@dimen/abc_button_padding_horizontal_material"
+        android:paddingRight="@dimen/abc_button_padding_horizontal_material"
+        android:paddingTop="@dimen/abc_button_padding_vertical_material"
+        android:paddingBottom="@dimen/abc_control_padding_material">
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/cafebutton"
-            android:src="@drawable/cafe_button"
+            android:id="@+id/card_button"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
-            android:layout_marginBottom="47dp"
             android:background="@android:color/transparent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:src="@drawable/card_button_img"
+            android:layout_above="@+id/shop_button"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/abc_button_padding_vertical_material" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/cardbutton"
-            android:src="@drawable/card_button"
+            android:id="@+id/shop_button"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
             android:background="@android:color/transparent"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="38dp" />
+            android:src="@drawable/shop_button_img"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/abc_button_padding_vertical_material" />
 
-    </RelativeLayout>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/event_button"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:background="@android:color/transparent"
+            android:src="@drawable/event_button_img"
+            android:layout_below="@+id/shop_button"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/abc_button_padding_vertical_material" />
+    </LinearLayout>
 
     <ImageView
         android:layout_width="fill_parent"
@@ -45,7 +65,8 @@
         android:id="@+id/cardView"
         android:src="@drawable/card_image"
         android:scaleType="fitXY"
+        android:adjustViewBounds="true"
         android:visibility="gone"
-        />
+        android:background="@drawable/card_image" />
 
 </RelativeLayout>

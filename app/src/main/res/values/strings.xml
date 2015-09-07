@@ -2,4 +2,7 @@
 
     <string name="action_settings" translatable="false">Settings</string>
     <string name="app_name">HelloMembership</string>
+    <string name="title_activity_splash">SplashActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>

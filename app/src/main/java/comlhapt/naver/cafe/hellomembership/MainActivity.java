@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         final ImageView cardView = (ImageView) findViewById(R.id.cardView);
         cardView.setImageResource(R.drawable.card_image);
 
-        ImageButton cardButton = (ImageButton) findViewById(R.id.cardbutton);
+        ImageButton cardButton = (ImageButton) findViewById(R.id.card_button);
         cardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
-        ImageButton cafeButton = (ImageButton) findViewById(R.id.cafebutton);
+
+        ImageButton cafeButton = (ImageButton) findViewById(R.id.shop_button);
         cafeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +43,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton eventButton = (ImageButton) findViewById(R.id.event_button);
+        eventButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://m.cafe.naver.com/ArticleList.nhn?search.clubid=21870087&search.menuid=468&search.boardtype=L")));
+            }
+        });
     }
 
     @Override
